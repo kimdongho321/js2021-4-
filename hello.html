@@ -6,8 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
 
-    <script src="ex)0406_1.js"></script>
-
+    <script src="./underscore-umd.js"></script>
+    <script>
+         let foo = [
+    {//key: value,
+    name: '고구마',
+    price: 1000
+    },
+    {
+    name: '감자',
+    price: 500
+    }, 
+    {
+        name: '바나나',
+        price: 1500
+    },
+];
+const bar = _.sortBy(foo, (item) => item.name);
+console.log(bar);
+    </script>
     </head>
 <body>
     
