@@ -1,5 +1,69 @@
 # 김동호 [201840107]
 
+## [05월 25일]
+
+<h1>express</h1><br>
+
+> express() 서버 애플리케이션 객체를 생성<br>
+express
+
+<h1>express 모듈로 서버 생성과 실행
+
+> const express =require('express); //모듈추출 <br>
+const app = express(); //서버를 생성<br>
+app.use((request, response) =>{
+    response.send('<"h1">Hello express</"h1">');
+}); //request 이벤트 리스너 설정<br>
+app.listen(52273, () => {
+    console.log('Server running at http://127.0.0.1:52273');
+}); //서버를 실행 (52273 = 포트번호)
+
+<h1>페이지 라우팅</h1><br>
+클라이언트 요청에 적절한 페이지를 제공하는 기술
+
+>get(path.callback) // GET 요청이 발생했을 때 이벤트 리스너를 지정합니다.<br>
+post(path, callback) // POST 요청이 발생했을 때 이벤트 리스너를 지정합니다.<br>
+put(path, callback) // PUT 요청이 발생했을 때 이벤트 리스너를 지정합니다.<br>
+delete(path, callback) // DELETE 요청이 발생했을 때 이벤트 리스너를 지정합니다.<br>
+all(path, callback) // 모든 요청이 발생했을 때 이벤트 리스너를 지정합니다.<br>
+
+<h3>페이지 라우팅을 할 때 토큰을 활용함</h3><br>
+'<"토큰이름">'을 활용<br>
+
+<h1>요청과 응답</h1><br>
+<h3>response객체</h3><br>
+send() // 데이터 본문을 제공<br>
+status // 상태 코드를 제공<br>
+set() // 헤더를 설정<br>
+
+send() 메소드: 가장 마지막에 실행하고,두번실행할수없음<br>
+
+<h3>Content-Type</h3><br>
+서버가 Content-type을 제공: 웹 브라우저는 헤더를 확인, 제공된 데이터의 형태를 확인(MIME이라는 문자열로 제공)<br>
+
+<h3>redirect()</h3><br>
+리다이렉트:3XX,특수한 상태코드<br>
+웹브라우저가 리다이렉트를 확인하면 화면을 출력하지 않고, 응답 헤더에 있는 Location 속성을 확인해서 해당 위치로 이동.
+특정 경로로 웹 브라우저를 인도 할 때 사용
+<br>
+redirect() //리다이렉트함.<br>
+
+<h1>미들웨어</h1><br>
+<h3>morgan 미들웨어</h3><br>
+express 모듈의 미들웨어로 사용할 수 있는 외부 모듈을 확인<br>
+로그: 관련된 정보를 가진 글자<br>
+
+<h1>body-parser 미들웨어</h1><br>
+요청 본문을 분석함<br>
+클라이언트에서 서버로 데이터 전송<br>
+
+<h1>RESTful 웹서비스 개요</h1><br>
+REST 규정에 맞게 만든 ROA를 따르는 웹 서비스 디자인 표준<br>
+GET // 컬렉션을 조회<br>
+POST // 컬렉션에 새로운 데이터 추가<br>
+PUT // 컬렉션 전체를 한꺼번에 변경<br>
+DELETE // 컬렉션 전체를 삭제<br>
+
 ## [05월 18일]
 
 <h1>Node.js</h1><br>
@@ -18,7 +82,8 @@ fs.writeFile(<"파일이름">,<"문자열">) > 비동기적으로 파일은 씀<
 
 <h1>노드 패키지 매니저</h1><br>
 
-
+<h1>async 모듈</h1><br>
+parallel() 메소드<br>
 
 ## [05월 11일]
 <h1>Date 객체</h1><br>
