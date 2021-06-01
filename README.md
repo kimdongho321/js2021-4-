@@ -1,13 +1,47 @@
 # 김동호 [201840107]
 
+## [06월 01일]
+<h1>jQuery객체</h1><br>
+
+>$(<매개변수>.메소드(<매개변수>,<매개변수>))<br>
+$().fun();<br>
+><h3>jQuery객체생성</h3><br>
+>$(document) //일반문서 객체로 jQuery 객체생성<br>$('h1') // CSS 선택자로 jQuery 객체생성<br>$('<"h1"><"/h1">') <!--h1태그안의 " 는 없는것임-->// HTML 문자열로 jQuery 객체생성<br><hr><h3>CSS 선택자를 사용하여 문서객체를 선택</h3><br>$('h1') // h1태그를 선택<br>$('h1.logo') // h1태그중에 logo라는class를 가진 태그 선택<br>$('#head') // head라는 id를 가진 태그 선택<br>$('input[type=submit]') // input 태그중에 type 속성이 submit인 태그 선택<br><hr>parent() // 부모태그선택<br>find // 후손 태그를 찾음<br>$('h1').parent() // h1태그의 부모태그 선택<br>$('h1').find(i) // h1태그 안의 i 태그 선택
+
+<h1>문서 객체 개별 조작</h1><br>
+
+>lenghth // 선택된 문서 객체의 수를 구함<br>
+each() // 선택한 문서 객체에 반복을 적용<br>
+$('h1').each(functio (index, item){});
+
+<h1>문서 객체 조작</h1><br>
+
+>text() // html 태그 내부의 문자를 조작<br>
+html() // html 태그 내부의 문자를 조작(html 태그 인식)<br>
+$('h1').text() // html 태그 내부의 h1 문자 전부를 조작<br>
+$('h1').html() // html 태그 내부의 h1 첫번째 문자를 조작<br>
+
+<h1>이벤트</h1><br>
+<h3>이벤트 직접 연결</h3><br>
+특정 태그에 이벤트를 연결함<br>
+
+>on() // 이벤트 연결<br>
+= on('click',function(event))<br>
+off() // 이벤트 해제<br>
+
+<h1>애니메이션</h1><br>
+
+>animate() // 스타일에 적용,숫자를 적용할 수있는 모든 속성에 animate() 메소드 적용 가능<br>
+$(this).animate({left: 1000,},3000); // 왼쪽으로 1000px만큼 3초동안 이동<br>
+
 ## [05월 25일]
 
 <h1>express</h1><br>
 
-> express() 서버 애플리케이션 객체를 생성<br>
+> express() // 서버 애플리케이션 객체를 생성<br>
 express
 
-<h1>express 모듈로 서버 생성과 실행
+<h1>express 모듈로 서버 생성과 실행</h1><br>
 
 > const express =require('express); //모듈추출 <br>
 const app = express(); //서버를 생성<br>
@@ -32,10 +66,10 @@ all(path, callback) // 모든 요청이 발생했을 때 이벤트 리스너를 
 
 <h1>요청과 응답</h1><br>
 <h3>response객체</h3><br>
-send() // 데이터 본문을 제공<br>
+
+>send() // 데이터 본문을 제공<br>
 status // 상태 코드를 제공<br>
 set() // 헤더를 설정<br>
-
 send() 메소드: 가장 마지막에 실행하고,두번실행할수없음<br>
 
 <h3>Content-Type</h3><br>
@@ -58,7 +92,8 @@ express 모듈의 미들웨어로 사용할 수 있는 외부 모듈을 확인<b
 클라이언트에서 서버로 데이터 전송<br>
 
 <h1>RESTful 웹서비스 개요</h1><br>
-REST 규정에 맞게 만든 ROA를 따르는 웹 서비스 디자인 표준<br>
+
+>REST 규정에 맞게 만든 ROA를 따르는 웹 서비스 디자인 표준<br>
 GET // 컬렉션을 조회<br>
 POST // 컬렉션에 새로운 데이터 추가<br>
 PUT // 컬렉션 전체를 한꺼번에 변경<br>
