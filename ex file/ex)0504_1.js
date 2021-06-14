@@ -1,12 +1,12 @@
 /*생성자함수*/
-/* function Product(name, price) {
+function Product(name, price) {
     this.name = name;
     this.price = price;
 }
 
 let product = new Product("바나나",1200);
 
-console.log(product); */
+console.log(product); 
 
 /*프로토타입*/
 /* function Product(name, price) {
